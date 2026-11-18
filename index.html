@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resepmu - Pencari Resep Makanan</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- FontAwesome untuk Ikon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <header>
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M18 2v6a3 3 0 0 1-3 3 3 3 0 0 1-3-3V2"></path>
+                    <line x1="15" y1="2" x2="15" y2="11"></line>
+                    <path d="M17 15l-1.4 3.5a2 2 0 0 1-1.8 1.5h-1.6a2 2 0 0 1-1.8-1.5L9 15"></path>
+                    <path d="M6 2v20"></path>
+                    <path d="M2 6h8"></path>
+                </svg>
+                <span>Resepmu</span>
+            </a>
+            
+            <div class="search-bar">
+                <input type="text" id="searchInput" placeholder="Cari resep, bahan, atau kategori...">
+                <button id="searchBtn"><i class="fas fa-search"></i></button>
+            </div>
+
+            <div class="nav-actions">
+                <button id="themeToggle" title="Ubah Tema"><i class="fas fa-moon"></i></button>
+                <button id="authBtn" class="btn-primary"><i class="fas fa-user"></i> Masuk</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container">
+        <!-- Hero Section -->
+        <section class="hero">
+            <h1>Temukan Inspirasi Masakan Setiap Hari</h1>
+            <p>Jelajahi ribuan resep lezat, mudah, dan teruji langsung dari dapur rumahan.</p>
+        </section>
+
+        <!-- Kategori -->
+        <section class="categories">
+            <h2>Kategori Populer</h2>
+            <div class="chip-container" id="categoryContainer">
+                <button class="chip active" data-category="all">Semua</button>
+                <button class="chip" data-category="Nusantara">Nusantara</button>
+                <button class="chip" data-category="Cepat Saji">Cepat Saji</button>
+                <button class="chip" data-category="Sehat">Sehat</button>
+                <button class="chip" data-category="Dessert">Dessert</button>
+            </div>
+        </section>
+
+        <!-- Daftar Resep -->
+        <section class="recipe-section">
+            <div class="section-header">
+                <h2>Resep Pilihan</h2>
+                <button id="addRecipeBtn" class="btn-outline" style="display: none;"><i class="fas fa-plus"></i> Tulis Resep</button>
+            </div>
+            <div class="recipe-grid" id="recipeGrid">
+                <!-- Data resep akan dimuat oleh JavaScript -->
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal Detail Resep -->
+    <div id="recipeModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div id="modalBody">
+                <!-- Detail resep dimuat dinamis -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Login/Auth -->
+    <div id="authModal" class="modal">
+        <div class="modal-content auth-card">
+            <span class="close-modal">&times;</span>
+            <h2 id="authTitle">Masuk ke Resepmu</h2>
+            <form id="authForm">
+                <div class="form-group" id="nameGroup" style="display: none;">
+                    <label>Nama Lengkap</label>
+                    <input type="text" id="authName" placeholder="Nama Anda">
+                </div>
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" id="authEmail" required placeholder="nama@email.com">
+                </div>
+                <div class="form-group">
+                    <label>Kata Sandi</label>
+                    <input type="password" id="authPassword" required placeholder="••••••••">
+                </div>
+                <button type="submit" class="btn-primary full-width" id="authSubmitBtn">Masuk</button>
+            </form>
+            <p class="auth-switch">
+                <span id="switchText">Belum punya akun?</span> <a href="#" id="switchAuthMode">Daftar sekarang</a>
+            </p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Resepmu. Dibuat dengan ❤️ untuk para pencinta kuliner.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
